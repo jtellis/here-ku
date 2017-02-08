@@ -18,7 +18,15 @@ class PositionContainer extends Component {
     navigator.geolocation.clearWatch(this.state.watchID)
   }
   render(){
-    return <div></div>
+    let childrenWithPos = React.Children.map(this.props.children, (child)=> {
+      return React.cloneElement(child, {position: this.state.position})
+    })
+
+    return (
+      <div>
+        {childrenWithPos}
+      </div>
+    )
   }
 }
 

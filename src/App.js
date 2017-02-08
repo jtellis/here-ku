@@ -7,6 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import AppBar from 'material-ui/AppBar'
 import SubmissionsContainer from './SubmissionsContainer'
+import PositionContainer from './PositionContainer'
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -21,7 +22,9 @@ class App extends Component {
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
         <AppBar title='here-ku' />
-        <SubmissionsContainer />
+        <PositionContainer>
+          <SubmissionsContainer />
+        </PositionContainer>
         </div>
       </MuiThemeProvider>
     );
