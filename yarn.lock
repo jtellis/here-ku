@@ -3635,6 +3635,10 @@ normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
 
+normalize-strings@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/normalize-strings/-/normalize-strings-1.1.0.tgz#b24a75ed48176394404f74649b5cb8040e899a75"
+
 normalize-url@^1.4.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-1.9.0.tgz#c2bb50035edee62cd81edb2d45da68dc25e3423e"
@@ -3869,6 +3873,10 @@ pkg-up@^1.0.0:
 pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
+
+pluralize@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-3.1.0.tgz#84213d0a12356069daa84060c559242633161368"
 
 postcss-calc@^5.2.0:
   version "5.3.1"
@@ -4954,6 +4962,15 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
+syllable@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/syllable/-/syllable-2.0.0.tgz#d4118d4fe8df943a045bad8b411748453c3613f1"
+  dependencies:
+    has "^1.0.1"
+    normalize-strings "^1.1.0"
+    pluralize "^3.0.0"
+    trim "0.0.1"
+
 symbol-observable@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
@@ -5051,6 +5068,10 @@ tough-cookie@^2.3.2, tough-cookie@~2.3.0:
 tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
+
+trim@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/trim/-/trim-0.0.1.tgz#5858547f6b290757ee95cccc666fb50084c460dd"
 
 tryit@^1.0.1:
   version "1.0.3"

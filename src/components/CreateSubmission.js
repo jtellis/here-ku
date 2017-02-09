@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import SubmissionForm from './SubmissionForm'
+import SubmissionFormContainer from './SubmissionFormContainer'
 
 class CreateSubmission extends Component {
   render() {
-    return <SubmissionForm />
+    return <SubmissionFormContainer />
   }
 }
 
