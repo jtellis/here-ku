@@ -4,8 +4,8 @@ import './Submission.css'
 function Submission(props) {
   const {haiku, user, created_at, likes} = props.submission
   return (
-    <div>
-      <p className="haiku">
+    <div className='submission'>
+      <p className='haiku'>
         {haiku.lineOne}<br />
         {haiku.lineTwo}<br />
         {haiku.lineThree}

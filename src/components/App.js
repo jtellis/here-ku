@@ -6,8 +6,8 @@ import {
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import AppBar from 'material-ui/AppBar'
-import SubmissionsContainer from './SubmissionsContainer'
 import PositionContainer from './PositionContainer'
+import {Link} from 'react-router'
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -21,13 +21,17 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-        <AppBar title='here-ku' />
-        <PositionContainer>
-          <SubmissionsContainer />
-        </PositionContainer>
+          <AppBar title='here-ku' />
+          <ul>
+            <li><Link to="/submissions">Submission</Link></li>
+            <li><Link to="/submit">Submit</Link></li>
+          </ul>
+          <PositionContainer>
+            {this.props.children}
+          </PositionContainer>
         </div>
       </MuiThemeProvider>
-    );
+    )
   }
 }
 
