@@ -2,8 +2,8 @@ import React from 'react'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 
-const SubmissionForm = (props) => (
-  <form>
+const HaikuForm = (props) => (
+  <form onSubmit={(e) => props.submitHandler(e)}>
     <TextField
       data-allowed-syllables={5}
       name='one'
@@ -24,10 +24,11 @@ const SubmissionForm = (props) => (
     />
     <hr />
     <RaisedButton
-      label="Submit"
+      label='Submit'
       disabled={!props.valid}
+      type='submit'
     />
   </form>
 )
 
-export default SubmissionForm
+export default HaikuForm

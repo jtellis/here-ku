@@ -1,9 +1,16 @@
 import React, {Component} from 'react'
-import SubmissionFormContainer from './SubmissionFormContainer'
+import HaikuFormContainer from './HaikuFormContainer'
 
 class CreateSubmission extends Component {
+  createSubmission = (haiku) => {
+    console.log(haiku)
+  }
   render() {
-    return <SubmissionFormContainer />
+    return (
+      <HaikuFormContainer
+        createSubmission={this.createSubmission}
+      />
+    )
   }
 }
 
