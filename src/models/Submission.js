@@ -18,6 +18,15 @@ class Submission {
     })
     return request
   }
+  static create(submission) {
+    const request = axios({
+      method: 'post',
+      url: `${submissionsUrl}`,
+      data: submission,
+      headers: authHeader
+    })
+    return request
+  }
 }
 
 export default Submission
