@@ -11,7 +11,7 @@ function Submission(props) {
         {haiku.lineThree}
       </p>
       <p>
-        Written by <a href='#'>{user}</a><br />
+        Written by <a href='#'>{user.name}</a><br />
         {created_at} | <a href='#'>&hearts;</a>({likes})
       </p>
     </div>

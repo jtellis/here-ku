@@ -14,7 +14,7 @@ const muiTheme = getMuiTheme({
     primary1Color: pink500,
     accent1Color: blue500
   }
-});
+})
 
 class App extends Component {
   render() {

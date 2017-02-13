@@ -1,28 +1,27 @@
 import React, { Component } from 'react'
 import Submissions from './Submissions'
-
-const SUBMISSION = {
-    haiku: {
-      lineOne: 'Keep straight down this block,',
-      lineTwo: 'Then turn right where you will find',
-      lineThree: 'A peach tree blooming.'
-    },
-    user: 'Jesse Ellis',
-    created_at: '12:14pm on 02/08/17',
-    location: {
-      type: 'Point',
-      coordinates: [-71.422222, 41.823611]
-    },
-    likes: 3
-  }
+import Submission from '../models/Submission'
 
 class SubmissionsContainer extends Component {
-  render() {
-    let submissions = []
-    for(let i=0; i < 10; i++) {
-      submissions.push(SUBMISSION)
+  constructor(props) {
+    super(props)
+    this.state = {
+      submissions: []
     }
-    return <Submissions submissions={submissions} />
+  }
+  getSubmissions = (submissionId) => {
+    Submission.get(submissionId)
+      .then((res) => {
+        this.setState({
+          submissions: res.data
+        })
+      })
+  }
+  componentDidMount() {
+    this.getSubmissions()
+  }
+  render() {
+    return <Submissions submissions={this.state.submissions} />
   }
 }
 
