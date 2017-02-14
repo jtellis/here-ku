@@ -2,6 +2,7 @@ import React from 'react'
 import Submission from './Submission'
 import RefreshIndicator from 'material-ui/RefreshIndicator'
 import {blue500} from 'material-ui/styles/colors'
+import {List} from 'material-ui/List'
 
 function Submissions(props) {
   let submissions = props.submissions.map((submission, index) => {
@@ -12,16 +13,14 @@ function Submissions(props) {
         <RefreshIndicator
           size={50}
           left={150}
-          top={0}
+          top={150}
           status='loading'
           loadingColor={blue500}
         />
     )
   } else {
     return (
-      <div>
-      {submissions}
-      </div>
+      <List children={submissions} />
     )
   }
 }

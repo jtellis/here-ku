@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './PositionContainer.css'
 
 class PositionContainer extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class PositionContainer extends Component {
     })
 
     return (
-      <div>
+      <div className='position-container'>
         {childrenWithPos}
       </div>
     )

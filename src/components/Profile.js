@@ -1,5 +1,7 @@
 import React from 'react'
+import {List} from 'material-ui/List'
 import ProfileSubmission from './ProfileSubmission'
+import './Profile.css'
 
 function Profile(props) {
   let submissions = props.submissions.map((submission, index) => {
@@ -14,7 +16,8 @@ function Profile(props) {
   return (
     <div>
       <h3>Profile</h3>
-      {submissions}
+      <h4 className='heading'>Your Here-ku</h4>
+      <List children={submissions} />
     </div>
   )
 }

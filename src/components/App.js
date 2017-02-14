@@ -18,6 +18,10 @@ const muiTheme = getMuiTheme({
   }
 })
 
+const appBarStyle = {
+  position: 'fixed'
+}
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -34,6 +38,7 @@ class App extends Component {
           <AppBar
             title='here-ku'
             onLeftIconButtonTouchTap={this.handleToggle}
+            style={appBarStyle}
           />
             <Drawer
               docked={false}

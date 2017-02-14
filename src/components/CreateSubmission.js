@@ -20,9 +20,12 @@ class CreateSubmission extends Component {
   }
   render() {
     return (
-      <HaikuFormContainer
-        createSubmission={this.createSubmission}
-      />
+      <div>
+        <h3>Write Here-ku</h3>
+        <HaikuFormContainer
+          createSubmission={this.createSubmission}
+        />
+      </div>
     )
   }
 }

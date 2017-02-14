@@ -1,9 +1,14 @@
 import React from 'react'
-import './Submission.css'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  margin: 10,
+  textAlign: 'center'
+}
 
 function Submission(props) {
   const {haiku, user, created_at, likes} = props.submission
-  return (
+  const submission = (
     <div className='submission'>
       <p className='haiku'>
         {haiku.lineOne}<br />
@@ -15,6 +20,9 @@ function Submission(props) {
         {created_at} | <a href='#'>&hearts;</a>({likes})
       </p>
     </div>
+  )
+  return (
+    <Paper style={style} children={submission} />
   )
 }
 
