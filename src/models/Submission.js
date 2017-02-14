@@ -3,18 +3,31 @@ import local from '../config/local.js'
 
 const submissionsUrl = `${local.apiUrl}/submissions`
 
-const authHeader = {
-  'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+function authHeader() {
+  return {
+    'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+  }
 }
 
 class Submission {
   static get(submissionId) {
-    //if no ID is specified, all are fetched
-    submissionId = submissionId === undefined ? '' : submissionId
+    let url = submissionId ? `${submissionsUrl}/${submissionId}` : submissionsUrl
     const request = axios({
       method: 'get',
-      url: `${submissionsUrl}/${submissionId}`,
-      headers: authHeader
+      url: url,
+      headers: authHeader()
+    })
+    return request
+  }
+  static getNearby(position) {
+    const request = axios({
+      method: 'get',
+      url: `${submissionsUrl}`,
+      params: {
+        lon: position.lon,
+        lat: position.lat
+      },
+      headers: authHeader()
     })
     return request
   }
@@ -23,7 +36,15 @@ class Submission {
       method: 'post',
       url: `${submissionsUrl}`,
       data: submission,
-      headers: authHeader
+      headers: authHeader()
+    })
+    return request
+  }
+  static delete(submissionId) {
+    const request = axios({
+      method: 'delete',
+      url: `${submissionsUrl}/${submissionId}`,
+      headers: authHeader()
     })
     return request
   }

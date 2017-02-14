@@ -8,6 +8,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import AppBar from 'material-ui/AppBar'
 import PositionContainer from './PositionContainer'
 import {Link} from 'react-router'
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -17,15 +19,36 @@ const muiTheme = getMuiTheme({
 })
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: false
+    }
+  }
+  handleToggle = () => this.setState({open: !this.state.open});
+  handleClose = () => this.setState({open: false});
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-          <AppBar title='here-ku' />
-          <ul>
-            <li><Link to="/submissions">Submission</Link></li>
-            <li><Link to="/submit">Submit</Link></li>
-          </ul>
+          <AppBar
+            title='here-ku'
+            onLeftIconButtonTouchTap={this.handleToggle}
+          />
+            <Drawer
+              docked={false}
+              width={200}
+              open={this.state.open}
+              onRequestChange={(open) => this.setState({open})}
+            >
+              <MenuItem onTouchTap={this.handleClose}><Link to='/'>About</Link></MenuItem>
+              <MenuItem onTouchTap={this.handleClose}><Link to='/submissions'>Read Here-ku</Link></MenuItem>
+              <MenuItem onTouchTap={this.handleClose}><Link to='/submit'>Write Here-ku</Link></MenuItem>
+              <MenuItem onTouchTap={this.handleClose}><Link to='/profile'>Profile</Link></MenuItem>
+              <MenuItem onTouchTap={this.handleClose}><Link to='/register'>Register</Link></MenuItem>
+              <MenuItem onTouchTap={this.handleClose}><Link to='/login'>Login</Link></MenuItem>
+              <MenuItem onTouchTap={this.handleClose}><Link to='/logout'>Logout</Link></MenuItem>
+            </Drawer>
           <PositionContainer>
             {this.props.children}
           </PositionContainer>
@@ -35,4 +58,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

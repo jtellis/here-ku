@@ -2,10 +2,10 @@ import React from 'react'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 
-function LoginForm(props) {
+function RegisterForm(props) {
   return (
     <div>
-      <h3>Login</h3>
+      <h3>Register</h3>
       <form onSubmit={(e) => props.submitHandler(e)}>
         <TextField
           name='username'
@@ -31,4 +31,4 @@ function LoginForm(props) {
   )
 }
 
-export default LoginForm
+export default RegisterForm

@@ -4,15 +4,13 @@ import Submission from '../models/Submission'
 import {browserHistory} from 'react-router'
 
 class CreateSubmission extends Component {
-  constructor(props) {
-    super(props)
-  }
   createSubmission = (haiku) => {
+    const position = this.props.position;
     const submission = {
       haiku: haiku,
       location: {
         type: 'Point',
-        coordinates: this.props.position
+        coordinates: [position.lon, position.lat]
       }
     }
     Submission.create(submission)

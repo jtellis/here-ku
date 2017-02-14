@@ -5,10 +5,16 @@ class PositionContainer extends Component {
     super(props)
     this.state = {
       watchID: null,
-      position: [0, 0]
+      position: {
+        lon: 0,
+        lat: 0
+      }
     }
     let watchID = navigator.geolocation.watchPosition((position) => {
-      let currentPos = [position.coords.longitude, position.coords.latitude]
+      let currentPos = {
+        lon: position.coords.longitude,
+        lat: position.coords.latitude
+      }
       this.setState({
         position: currentPos
       })

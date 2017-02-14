@@ -9,8 +9,8 @@ class SubmissionsContainer extends Component {
       submissions: []
     }
   }
-  getSubmissions = (submissionId) => {
-    Submission.get(submissionId)
+  getSubmissions = (position) => {
+    Submission.getNearby(position)
       .then((res) => {
         this.setState({
           submissions: res.data
@@ -18,7 +18,12 @@ class SubmissionsContainer extends Component {
       })
   }
   componentDidMount() {
-    this.getSubmissions()
+    this.getSubmissions(this.props.position)
+  }
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.position !== this.state.position) {
+      this.getSubmissions(nextProps.position)
+    }
   }
   render() {
     return <Submissions submissions={this.state.submissions} />
