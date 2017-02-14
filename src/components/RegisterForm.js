@@ -22,7 +22,7 @@ function RegisterForm(props) {
         />
         <hr />
         <RaisedButton
-          label='Login'
+          label='Register'
           disabled={false}
           type='submit'
         />
