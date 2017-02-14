@@ -1,0 +1,13 @@
+.about-container {
+  padding: 10px;
+}
+.heading {
+  text-align: center;
+}
+.subheading {
+  font-weight: lighter;
+}
+p {
+  text-indent: 5px;
+  margin: 10px;
+}

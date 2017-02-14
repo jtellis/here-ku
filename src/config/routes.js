@@ -7,6 +7,7 @@ import LoginFormContainer from '../components/LoginFormContainer'
 import LogoutFormContainer from '../components/LogoutFormContainer'
 import RegisterFormContainer from '../components/RegisterFormContainer'
 import ProfileContainer from '../components/ProfileContainer'
+import About from '../components/About'
 
 const requireAuth = (nextState, replace) => {
   if (!('jwt' in localStorage)) {
@@ -19,6 +20,7 @@ const requireAuth = (nextState, replace) => {
 
 const routes = (
   <Route path='/' component={App}>
+    <Route path='/about' component={About} />
     <Route path='/register' component={RegisterFormContainer} />
     <Route path='/login' component={LoginFormContainer} />
     <Route path='/logout' component={LogoutFormContainer} onEnter={requireAuth} />
